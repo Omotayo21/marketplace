@@ -1,0 +1,39 @@
+<svg width="1440" height="1024" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect x="0" y="0" width="1440" height="1024" fill="#F9FAFB" />
+
+  <!-- Header -->
+  <rect x="0" y="0" width="1440" height="80" fill="#FFFFFF" />
+  <text x="40" y="50" font-family="Arial" font-size="24" font-weight="bold" fill="#000000">Marketplace</text>
+  <rect x="250" y="25" width="300" height="40" rx="8" ry="8" fill="#F3F4F6" />
+  <text x="260" y="50" font-family="Arial" font-size="14" fill="#6B7280">Search...</text>
+  <text x="580" y="50" font-family="Arial" font-size="16" fill="#000000">Categories ▼</text>
+
+  <!-- Product Card 1 -->
+  <rect x="40" y="120" width="320" height="300" rx="12" ry="12" fill="#FFFFFF" />
+  <rect x="40" y="120" width="320" height="150" rx="12" ry="12" fill="#E5E7EB" />
+  <text x="56" y="300" font-family="Arial" font-size="18" font-weight="bold" fill="#000000">Stylish Sneakers</text>
+  <text x="56" y="325" font-family="Arial" font-size="14" fill="#6B7280">Comfortable sneakers perfect for everyday wear.</text>
+  <text x="56" y="350" font-family="Arial" font-size="16" fill="#FBBF24">★★★★☆</text>
+
+  <!-- Product Card 2 -->
+  <rect x="400" y="120" width="320" height="300" rx="12" ry="12" fill="#FFFFFF" />
+  <rect x="400" y="120" width="320" height="150" rx="12" ry="12" fill="#E5E7EB" />
+  <text x="416" y="300" font-family="Arial" font-size="18" font-weight="bold" fill="#000000">Vintage Jacket</text>
+  <text x="416" y="325" font-family="Arial" font-size="14" fill="#6B7280">Classic vintage jacket, warm and stylish.</text>
+  <text x="416" y="350" font-family="Arial" font-size="16" fill="#FBBF24">★★★★★</text>
+
+  <!-- Product Card 3 -->
+  <rect x="40" y="450" width="320" height="300" rx="12" ry="12" fill="#FFFFFF" />
+  <rect x="40" y="450" width="320" height="150" rx="12" ry="12" fill="#E5E7EB" />
+  <text x="56" y="630" font-family="Arial" font-size="18" font-weight="bold" fill="#000000">Smartphone</text>
+  <text x="56" y="655" font-family="Arial" font-size="14" fill="#6B7280">Latest model with all the new features.</text>
+  <text x="56" y="680" font-family="Arial" font-size="16" fill="#FBBF24">★★★★☆</text>
+
+  <!-- Product Card 4 -->
+  <rect x="400" y="450" width="320" height="300" rx="12" ry="12" fill="#FFFFFF" />
+  <rect x="400" y="450" width="320" height="150" rx="12" ry="12" fill="#E5E7EB" />
+  <text x="416" y="630" font-family="Arial" font-size="18" font-weight="bold" fill="#000000">Backpack</text>
+  <text x="416" y="655" font-family="Arial" font-size="14" fill="#6B7280">Spacious backpack suitable for travel.</text>
+  <text x="416" y="680" font-family="Arial" font-size="16" fill="#FBBF24">★★★★☆</text>
+</svg>

@@ -1,9 +1,9 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { signIn, signInWithGoogle, supabase, resetPassword } from "../lib/supabase";
+import { signIn, signInWithGoogle, supabase, resetPassword } from "../../lib/supabase";
 import Image from "next/image";
-import LogoDark from "../public/agora-logo-dark.png";
+import LogoDark from "../../public/agora-logo-dark.png";
 import {toast } from "react-hot-toast";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 export default function Login() {

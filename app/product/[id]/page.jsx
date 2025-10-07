@@ -82,7 +82,7 @@ export default function ProductDetails({ params }) {
               Product Not Found
             </h2>
             <p className="text-gray-600 mb-6">
-              The product you're looking for doesn't exist.
+              The product you&apos;re looking for doesn&apos;t exist.
             </p>
             <Link
               href="/home"
@@ -133,7 +133,7 @@ export default function ProductDetails({ params }) {
                 {/* Main Image */}
                 <div className="relative bg-gray-100  rounded-2xl overflow-hidden aspect-square">
                   {!imageError ? (
-                    <img
+                    <Image
                       src={product.image_url || " "}
                       alt={product.title}
                       className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
@@ -237,7 +237,7 @@ export default function ProductDetails({ params }) {
                     <div className="flex-shrink-0">
                       <div className="w-20 h-20 rounded-2xl bg-gradient-to-r from-blue-100 to-indigo-100 flex items-center justify-center overflow-hidden border-4 border-white shadow-lg">
                         {product.profiles?.profile_picture ? (
-                          <img
+                          <Image
                             src={product.profiles.profile_picture}
                             alt={product.profiles.name}
                             className="w-full h-full object-cover"

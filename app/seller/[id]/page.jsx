@@ -6,7 +6,7 @@ import Link from "next/link";
 import Header from "../../_components/Header";
 import Footer from "../../_components/Footer";
 import RateSeller from "../../_components/Ratings";
-
+import Image from "next/image";
 export default function PublicSellerProfile({ params }) {
   const [currentUser, setCurrentUser] = useState(null);
   const [profile, setProfile] = useState(null);
@@ -76,7 +76,7 @@ export default function PublicSellerProfile({ params }) {
         <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center">
           <div className="text-center">
             <h2 className="text-2xl font-bold text-gray-800 mb-2">Seller Not Found</h2>
-            <p className="text-gray-600 mb-6">This seller profile doesn't exist.</p>
+            <p className="text-gray-600 mb-6">This seller profile doesn&apos;t exist.</p>
             <Link href="/home" className="bg-[#3a1e9d] text-white px-6 py-3 rounded-xl">
               Browse Products
             </Link>
@@ -132,7 +132,7 @@ export default function PublicSellerProfile({ params }) {
               <div className="relative">
                 <div className="w-32 h-32 md:w-40 md:h-40 rounded-2xl bg-gradient-to-r from-blue-100 to-indigo-100 flex items-center justify-center overflow-hidden border-4 border-white shadow-2xl">
                   {profile.profile_picture ? (
-                    <img src={profile.profile_picture} alt={profile.name} className="w-full h-full object-cover" />
+                    <Image src={profile.profile_picture} alt={profile.name} className="w-full h-full object-cover" />
                   ) : (
                     <svg className="w-16 h-16 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
@@ -243,14 +243,14 @@ export default function PublicSellerProfile({ params }) {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4" />
                     </svg>
                     <h3 className="text-xl font-semibold text-gray-800 mb-2">No Products Yet</h3>
-                    <p className="text-gray-600">This seller hasn't listed any products yet.</p>
+                    <p className="text-gray-600">This seller hasn&apos;t listed any products yet.</p>
                   </div>
                 ) : (
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {products.map((product) => (
                       <div key={product.id} className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
                         <div className="relative overflow-hidden">
-                          <img src={product.image_url} alt={product.title} className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" />
+                          <Image src={product.image_url} alt={product.title} className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" />
                           <div className="absolute top-3 right-3">
                             <span className="bg-black bg-opacity-70 text-white px-3 py-1 rounded-full text-sm font-semibold">
                               ${parseFloat(product.price).toFixed(2)}

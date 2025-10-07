@@ -135,7 +135,7 @@ export default function AddProduct() {
                   <div className="relative">
                     <div className="w-48 h-48 rounded-2xl border-2 border-dashed border-gray-300 bg-gray-50  flex flex-col items-center justify-center hover:border-blue-400 hover:bg-blue-50 transition-all duration-200 cursor-pointer overflow-hidden">
                       {imagePreview ? (
-                        <Image
+                        <img
                           src={imagePreview}
                           alt="Product preview"
                           className="w-full h-full object-cover"

@@ -238,7 +238,7 @@ export default function ProductDetails({ params }) {
                     <div className="flex-shrink-0">
                       <div className="w-20 h-20 rounded-2xl bg-gradient-to-r from-blue-100 to-indigo-100 flex items-center justify-center overflow-hidden border-4 border-white shadow-lg">
                         {product.profiles?.profile_picture ? (
-                          <Image
+                          <img
                             src={product.profiles.profile_picture}
                             alt={product.profiles.name}
                             className="w-full h-full object-cover"

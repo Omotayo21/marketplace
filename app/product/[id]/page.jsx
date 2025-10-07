@@ -134,7 +134,7 @@ export default function ProductDetails({ params }) {
                 {/* Main Image */}
                 <div className="relative bg-gray-100  rounded-2xl overflow-hidden aspect-square">
                   {!imageError ? (
-                    <Image
+                    <img
                       src={product.image_url || " "}
                       alt={product.title}
                       className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"

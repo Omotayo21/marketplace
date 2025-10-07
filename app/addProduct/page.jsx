@@ -11,7 +11,7 @@ import {
 import Header from "../_components/Header";
 import { FaPlus } from "react-icons/fa";
 import { toast } from "react-hot-toast";
-
+import Image from "next/image";
 export default function AddProduct() {
   const [user, setUser] = useState(null);
   const [profile, setProfile] = useState(null);

@@ -132,7 +132,7 @@ export default function PublicSellerProfile({ params }) {
               <div className="relative">
                 <div className="w-32 h-32 md:w-40 md:h-40 rounded-2xl bg-gradient-to-r from-blue-100 to-indigo-100 flex items-center justify-center overflow-hidden border-4 border-white shadow-2xl">
                   {profile.profile_picture ? (
-                    <Image src={profile.profile_picture} alt={profile.name} className="w-full h-full object-cover" />
+                    <img src={profile.profile_picture} alt={profile.name} className="w-full h-full object-cover" />
                   ) : (
                     <svg className="w-16 h-16 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
@@ -250,7 +250,7 @@ export default function PublicSellerProfile({ params }) {
                     {products.map((product) => (
                       <div key={product.id} className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
                         <div className="relative overflow-hidden">
-                          <Image src={product.image_url} alt={product.title} className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" />
+                          <img src={product.image_url} alt={product.title} className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" />
                           <div className="absolute top-3 right-3">
                             <span className="bg-black bg-opacity-70 text-white px-3 py-1 rounded-full text-sm font-semibold">
                               ${parseFloat(product.price).toFixed(2)}

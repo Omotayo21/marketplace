@@ -10,7 +10,7 @@ import Link from "next/link";
 import Header from "../_components/Header";
 import Footer from "../_components/Footer";
 import Ratings from "../_components/Ratings";
-
+import Image from "next/image";
 export default function ProfilePage() {
   const [currentUser, setCurrentUser] = useState(null);
   const [profile, setProfile] = useState(null);
@@ -143,7 +143,7 @@ export default function ProfilePage() {
               <div className="relative">
                 <div className="w-32 h-32 md:w-40 md:h-40 rounded-2xl bg-gradient-to-r from-blue-100 to-indigo-100 flex items-center justify-center overflow-hidden border-4 border-white shadow-2xl">
                   {profile.profile_picture ? (
-                    <img
+                    <Image
                       src={profile.profile_picture}
                       alt={profile.name}
                       className="w-full h-full object-cover"
@@ -310,7 +310,7 @@ export default function ProfilePage() {
                         className="bg-white  rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300  overflow-hidden group"
                       >
                         <div className="relative overflow-hidden">
-                          <img
+                          <Image
                             src={product.image_url}
                             alt={product.title}
                             className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"

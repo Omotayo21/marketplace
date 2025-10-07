@@ -129,7 +129,7 @@ export default function ProfileForm() {
               <div className="relative inline-block">
                 <div className="w-32 h-32 rounded-full bg-gradient-to-r from-blue-100 to-indigo-100 flex items-center justify-center overflow-hidden border-4 border-white shadow-lg">
                   {imagePreview ? (
-                    <img
+                    <Image
                       src={imagePreview}
                       alt="Profile preview"
                       className="w-full h-full object-cover"

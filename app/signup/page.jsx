@@ -50,7 +50,7 @@ export default function SignUp() {
       toast.error(error.message);
     } else {
        toast.success("account created successfully Check your email to confirm your account!");
-      alert("Check your email to confirm your account!");
+   //   alert("Check your email to confirm your account!");
     }
     setLoading(false);
   };

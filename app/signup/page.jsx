@@ -39,10 +39,10 @@ export default function SignUp() {
    };
  const handleSignUp = async (e) => {
     e.preventDefault();
-    if (passwordStrength < 50) {
-      toast.error("Please choose a stronger password");
-      return;
-    }
+   // if (passwordStrength < 50) {
+    //  toast.error("Please choose a stronger password");
+    //  return;
+ //   }
     setLoading(true);
 
     const { data, error } = await signUp(email, password);

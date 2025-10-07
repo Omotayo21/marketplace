@@ -104,7 +104,7 @@ export default function Dashboard() {
               <div className="flex items-center space-x-4">
                 <div className="w-16 h-16 rounded-full bg-gradient-to-r from-blue-100 to-indigo-100 flex items-center justify-center overflow-hidden">
                   {profile?.profile_picture ? (
-                    <Image
+                    <img
                       src={profile.profile_picture}
                       alt={profile.name}
                       className="w-full h-full object-cover"
@@ -224,7 +224,7 @@ export default function Dashboard() {
                       className="border border-gray-200 rounded-2xl overflow-hidden group hover:shadow-lg transition-all duration-300"
                     >
                       <div className="relative">
-                        <Image
+                        <img
                           src={product.image_url}
                           alt={product.title}
                           className="w-full h-48 object-cover"

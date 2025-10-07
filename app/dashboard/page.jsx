@@ -21,7 +21,7 @@ import {
   FaBox,
 } from "react-icons/fa";
 import { toast } from "react-hot-toast";
-
+import Image from "next/image";
 export default function Dashboard() {
   const [user, setUser] = useState(null);
   const [profile, setProfile] = useState(null);

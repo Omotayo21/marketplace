@@ -123,7 +123,7 @@ const fetchUser = async () => {
               )}
               {searchTerm && (
                 <span className="inline-flex items-center px-3 py-1 rounded-full bg-green-100 text-green-800 text-sm">
-                  Search: "{searchTerm}"
+                  Search: {searchTerm}
                   <button
                     onClick={() => setSearchTerm("")}
                     className="ml-2 hover:text-green-600"

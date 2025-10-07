@@ -76,7 +76,7 @@ export default function RoleSelection() {
               Choose Your Role
             </h1>
             <p className="text-gray-600 ">
-              Select how you'd like to use our platform
+              Select how you&apos;d like to use our platform
             </p>
           </div>
 

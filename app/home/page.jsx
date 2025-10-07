@@ -178,7 +178,7 @@ const fetchUser = async () => {
                     >
                       {/* Product Image */}
                       <div className="relative overflow-hidden">
-                        <img
+                        <Image
                           src={product.image_url || "/api/placeholder/300/200"}
                           alt={product.title}
                           className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"

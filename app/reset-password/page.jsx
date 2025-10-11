@@ -16,10 +16,10 @@ export default function ResetPassword() {
 
   const checkPasswordStrength = (password) => {
     let strength = 0;
-    if (password.length >= 8) strength += 33;
-    if (/[A-Z]/.test(password)) strength += 33;
-    if (/[0-9]/.test(password)) strength += 33;
-    //if (/[^A-Za-z0-9]/.test(password)) strength += 25;
+    if (password.length >= 8) strength += 25;
+    if (/[A-Z]/.test(password)) strength += 25;
+    if (/[0-9]/.test(password)) strength += 25;
+    if (/[^A-Za-z0-9]/.test(password)) strength += 25;
     return strength;
   };
 
@@ -72,11 +72,11 @@ export default function ResetPassword() {
     { text: "At least 8 characters", met: newPassword.length >= 8 },
     { text: "One uppercase letter", met: /[A-Z]/.test(newPassword) },
     { text: "One number", met: /[0-9]/.test(newPassword) },
- //   { text: "One special character", met: /[^A-Za-z0-9]/.test(newPassword) },
+    { text: "One special character", met: /[^A-Za-z0-9]/.test(newPassword) },
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-gray-100 flex items-center justify-center p-4">
       <div className="max-w-md w-full">
         {/* Header */}
         <div className="text-center mb-8">

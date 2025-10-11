@@ -134,7 +134,7 @@ export default function ProfilePage() {
   return (
     <>
       <Header />
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 ">
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-gray-100 ">
         {/* Profile Header */}
         <div className="bg-white  shadow-lg">
           <div className="max-w-6xl mx-auto px-4 py-8">

@@ -96,7 +96,7 @@ export default function Dashboard() {
   return (
     <>
       <Header />
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-8 px-4">
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-gray-100 py-8 px-4">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="bg-white rounded-2xl shadow-lg p-6 mb-8">
@@ -122,13 +122,6 @@ export default function Dashboard() {
                   </p>
                 </div>
               </div>
-              <button
-                onClick={handleLogout}
-                className="flex items-center bg-red-500 text-white px-4 py-2 rounded-xl hover:bg-red-600 transition-colors duration-200"
-              >
-                <FaSignOutAlt className="mr-2" />
-                Logout
-              </button>
             </div>
           </div>
 
@@ -186,13 +179,13 @@ export default function Dashboard() {
           {profile?.role === "seller" && (
             <div className="bg-white rounded-2xl shadow-lg p-6">
               <div className="flex items-center justify-between mb-6">
-                <h2 className="text-2xl font-bold text-gray-800 flex items-center">
+                <h2 className="lg:text-2xl md:text-lg font-bold text-gray-800 flex items-center">
                   <FaBox className="mr-3 text-[#3a1e9d]" />
                   My Products ({products.length})
                 </h2>
                 <Link
                   href="/add-product"
-                  className="bg-[#3a1e9d] text-white px-4 py-2 rounded-xl hover:bg-blue-700 transition-colors flex items-center"
+                  className="bg-[#3a1e9d] text-white lg:px-4 lg:py-2 px-2 py-1 rounded-xl hover:bg-blue-700 transition-colors flex items-center"
                 >
                   <FaPlus className="mr-2" />
                   Add Product
@@ -231,7 +224,7 @@ export default function Dashboard() {
                         />
                         <div className="absolute top-3 right-3">
                           <span className="bg-black bg-opacity-70 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                            ${parseFloat(product.price).toFixed(2)}
+                            ₦{parseFloat(product.price).toFixed(2)}
                           </span>
                         </div>
                       </div>
@@ -300,7 +293,15 @@ export default function Dashboard() {
             </div>
           )}
         </div>
+        <button
+          onClick={handleLogout}
+          className="flex items-center mt-4 bg-red-500 text-white px-4 py-2 rounded-xl hover:bg-red-600 transition-colors duration-200"
+        >
+          <FaSignOutAlt className="mr-2" />
+          Logout
+        </button>
       </div>
+
       <Footer />
     </>
   );

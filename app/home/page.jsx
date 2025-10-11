@@ -62,7 +62,7 @@ const fetchUser = async () => {
   return (
     <>
       <Header />
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100  py-8 px-4">
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-gray-100  py-8 px-4">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center mb-8 flex flex-col justify-center items-center">
@@ -193,7 +193,7 @@ const fetchUser = async () => {
                         </div>
                         <div className="absolute top-3 right-3">
                           <span className="bg-black bg-opacity-50 text-white px-2 py-1 rounded-full text-sm">
-                            ${parseFloat(product.price).toFixed(2)}
+                            ₦{parseFloat(product.price).toFixed(2)}
                           </span>
                         </div>
                       </div>

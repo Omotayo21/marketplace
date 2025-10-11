@@ -53,7 +53,7 @@ export default function ProductDetails({ params }) {
     return (
       <>
         <Header />
-        <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center">
+        <div className="min-h-screen bg-gradient-to-br from-blue-50 to-gray-100 flex items-center justify-center">
           <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-blue-600"></div>
         </div>
       </>
@@ -64,7 +64,7 @@ export default function ProductDetails({ params }) {
     return (
       <>
         <Header />
-        <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center">
+        <div className="min-h-screen bg-gradient-to-br from-blue-50 to-gray-100 flex items-center justify-center">
           <div className="text-center">
             <svg
               className="w-24 h-24 text-gray-400 mx-auto mb-4"
@@ -97,13 +97,12 @@ export default function ProductDetails({ params }) {
     );
   }
 
-
   // Keep your JSX but replace the contact info section and add social links display
 
   return (
     <>
       <Header />
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100  py-8 px-4">
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-gray-100  py-8 px-4">
         <div className="max-w-6xl mx-auto">
           {/* Breadcrumb */}
           <nav className="flex items-center space-x-2 text-sm text-gray-600 mb-6">
@@ -165,8 +164,8 @@ export default function ProductDetails({ params }) {
                     />
                   </div>
                   {/* Price Badge */}
-                  <div className="absolute top-4 left-4 bg-gradient-to-r from-green-500 to-blue-500 text-white px-4 py-2 rounded-full font-bold text-lg shadow-lg">
-                    ${parseFloat(product.price).toFixed(2)}
+                  <div className="absolute top-4 left-4 bg-[#3a1e9d] text-white px-4 py-2 rounded-full font-bold text-lg shadow-lg">
+                    ₦{parseFloat(product.price).toFixed(2)}
                   </div>
                 </div>
               </div>
@@ -197,8 +196,6 @@ export default function ProductDetails({ params }) {
                   </p>
                 </div>
 
-               
-
                 {/* Action Buttons */}
                 <div className="flex space-x-4 pt-4">
                   <button
@@ -206,21 +203,6 @@ export default function ProductDetails({ params }) {
                     className="flex-1 bg-[#3a1e9d] text-white py-3 rounded-xl font-medium hover:from-blue-700 hover:to-indigo-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
                   >
                     Contact Seller
-                  </button>
-                  <button className="px-6 py-3 border border-gray-300 rounded-xl hover:bg-gray-50 dark:border-none transition-colors duration-200">
-                    <svg
-                      className="w-6 h-6 text-black"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                      />
-                    </svg>
                   </button>
                 </div>
               </div>
@@ -256,15 +238,15 @@ export default function ProductDetails({ params }) {
                     </div>
 
                     {/* Seller Details */}
-                    <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div>
-                        <h3 className="font-semibold text-gray-800  mb-2">
+                    <div className="flex-1 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-6 px-4 sm:px-6 md:px-8">
+                      <div className="w-full">
+                        <h3 className="font-semibold text-gray-800 mb-3 text-base sm:text-lg text-center md:text-left">
                           Seller Details
                         </h3>
-                        <div className="space-y-2">
-                          <p className="flex items-center text-gray-600 ">
+                        <div className="space-y-3">
+                          <p className="flex flex-wrap items-center text-gray-600 text-sm sm:text-base break-words">
                             <svg
-                              className="w-4 h-4 mr-2 text-gray-400"
+                              className="w-5 h-5 mr-2 text-gray-400 flex-shrink-0"
                               fill="none"
                               stroke="currentColor"
                               viewBox="0 0 24 24"
@@ -276,13 +258,14 @@ export default function ProductDetails({ params }) {
                                 d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
                               />
                             </svg>
-                            <strong>Name:</strong>{" "}
+                            <strong className="mr-1">Name:</strong>{" "}
                             {product.profiles?.name || "Not provided"}
                           </p>
+
                           {product.profiles?.brand && (
-                            <p className="flex items-center text-gray-600 ">
+                            <p className="flex flex-wrap items-center text-gray-600 text-sm sm:text-base break-words">
                               <svg
-                                className="w-4 h-4 mr-2 text-gray-400 "
+                                className="w-5 h-5 mr-2 text-gray-400 flex-shrink-0"
                                 fill="none"
                                 stroke="currentColor"
                                 viewBox="0 0 24 24"
@@ -294,13 +277,15 @@ export default function ProductDetails({ params }) {
                                   d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
                                 />
                               </svg>
-                              <strong>Brand:</strong> {product.profiles.brand}
+                              <strong className="mr-1">Brand:</strong>{" "}
+                              {product.profiles.brand}
                             </p>
                           )}
+
                           {product.profiles?.location && (
-                            <p className="flex items-center text-gray-600 ">
+                            <p className="flex flex-wrap items-center text-gray-600 text-sm sm:text-base break-words">
                               <svg
-                                className="w-4 h-4 mr-2 text-gray-400 "
+                                className="w-5 h-5 mr-2 text-gray-400 flex-shrink-0"
                                 fill="none"
                                 stroke="currentColor"
                                 viewBox="0 0 24 24"
@@ -318,69 +303,11 @@ export default function ProductDetails({ params }) {
                                   d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                                 />
                               </svg>
-                              <strong>Location:</strong>{" "}
+                              <strong className="mr-1">Location:</strong>{" "}
                               {product.profiles.location}
                             </p>
                           )}
-                          {product.profiles?.contact_info?.email && (
-                            <p className="flex items-center text-gray-600 ">
-                              <svg
-                                className="w-4 h-4 mr-2 text-gray-400 "
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                              >
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  strokeWidth={2}
-                                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                                />
-                              </svg>
-                              <strong>Email:</strong>{" "}
-                              {product.profiles.contact_info.email}
-                            </p>
-                          )}
-                          {product.profiles?.contact_info?.whatsapp && (
-                            <p className="flex items-center text-gray-600 ">
-                              <FaPhone className="w-4 h-4 mr-2 text-gray-400 " />
-                              <strong>Whatsapp:</strong>{" "}
-                              {product.profiles.contact_info.whatsapp}
-                            </p>
-                          )}
-                          {product.profiles?.contact_info?.snapchat && (
-                            <p className="flex items-center text-gray-600 ">
-                              👻
-                              <strong>Snapchat:</strong>{" "}
-                              {product.profiles.contact_info.snapchat}
-                            </p>
-                          )}
-                          {product.profiles?.contact_info?.instagram && (
-                            <p className="flex items-center text-gray-600 ">
-                              <FaInstagram className="w-4 h-4 mr-2 text-gray-400 " />
-                              <strong>Instagram: </strong>
-                              {"   "}
-                              {product.profiles.contact_info.instagram}
-                            </p>
-                          )}
-                          {product.profiles?.contact_info?.twitter && (
-                            <p className="flex items-center text-gray-600 ">
-                              <FaTwitter className="w-4 h-4 mr-2 text-gray-400 " />
-                              <strong>Twitter:</strong>{" "}
-                              {product.profiles.contact_info.twitter}
-                            </p>
-                          )}
                         </div>
-                      </div>
-
-                      <div>
-                        <h3 className="font-semibold text-gray-800  mb-2">
-                          About Seller
-                        </h3>
-                        <p className="text-gray-600  leading-relaxed">
-                          {product.profiles?.short_description ||
-                            "No description provided."}
-                        </p>
                       </div>
                     </div>
                   </div>

@@ -14,38 +14,38 @@ export default function SignUp() {
   const [loading, setLoading] = useState(false);
  const [passwordStrength, setPasswordStrength] = useState(0);
  
-  const checkPasswordStrength = (password) => {
-    let strength = 0;
-    if (password.length >= 8) strength += 33;
-    if (/[A-Z]/.test(password)) strength += 33;
-    if (/[0-9]/.test(password)) strength += 33;
-  //  if (/[^A-Za-z0-9]/.test(password)) strength += 25;
-    return strength;
+
+  const validateEmail = () => {
+    if (
+      !email.includes("@gmail.com") &&
+      !email.includes("@yahoo.com")
+    ) {
+    toast.error(
+          "Please enter a valid email address ending with @gmail.com or @yahoo.com",
+    );
+      return false;
+    }
+    return true;
   };
- const handlePasswordChange = (e) => {
-   const passwordValue = e.target.value;
-   setPassword(passwordValue);
-   setPasswordStrength(checkPasswordStrength(passwordValue));
- };
-   const getPasswordStrengthColor = (strength) => {
-     if (strength < 50) return "bg-red-500";
-     if (strength < 75) return "bg-yellow-500";
-     return "bg-green-500";
-   };
-   const getPasswordStrengthText = (strength) => {
-     if (strength < 50) return "Weak";
-     if (strength < 75) return "Medium";
-     return "Strong";
-   };
+
+  const validatePassword = () => {
+    if (password.length < 8) {
+      toast.error("Password must be at least 8 characters long");
+    return false;
+      
+    }
+    return true
+  }
+   
+   
  const handleSignUp = async (e) => {
     e.preventDefault();
-   // if (passwordStrength < 50) {
-    //  toast.error("Please choose a stronger password");
-    //  return;
- //   }
-    setLoading(true);
+    if (validateEmail() && validatePassword()) {
+         setLoading(true);
 
-    const { data, error } = await signUp(email, password);
+         const { data, error } = await signUp(email, password);
+    }
+ 
     if (error) {
       toast.error(error.message);
     } else {
@@ -66,7 +66,7 @@ const passwordRequirements = [
  
 ];
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-gray-100 flex items-center justify-center p-4">
       {/* Main Card */}
       <div className="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-md border border-gray-100">
         {/* Header */}
@@ -166,84 +166,8 @@ const passwordRequirements = [
             </button>
             </div>
           </div>
-          {password && (
-            <div className="mt-3">
-              <div className="flex justify-between items-center mb-2">
-                <span className="text-sm text-gray-600">Password strength</span>
-                <span
-                  className={`text-sm font-medium ${
-                    passwordStrength < 50
-                      ? "text-red-600"
-                      : passwordStrength < 75
-                      ? "text-yellow-600"
-                      : "text-green-600"
-                  }`}
-                >
-                  {getPasswordStrengthText(passwordStrength)}
-                </span>
-              </div>
-              <div className="w-full bg-gray-200 rounded-full h-2">
-                <div
-                  className={`h-2 rounded-full transition-all duration-300 ${getPasswordStrengthColor(
-                    passwordStrength
-                  )}`}
-                  style={{ width: `${passwordStrength}%` }}
-                ></div>
-              </div>
-            </div>
-          )}
-          {/* Password Requirements */}
-          <div className="bg-gray-50 rounded-xl p-4 border border-gray-200">
-            <h4 className="text-sm font-medium text-gray-700 mb-3">
-              Password Requirements
-            </h4>
-            <div className="space-y-2">
-              {passwordRequirements.map((req, index) => (
-                <div key={index} className="flex items-center">
-                  <div
-                    className={`w-5 h-5 rounded-full flex items-center justify-center mr-2 ${
-                      req.met
-                        ? "bg-green-100 text-green-600"
-                        : "bg-gray-100 text-gray-400"
-                    }`}
-                  >
-                    {req.met ? (
-                      <svg
-                        className="w-3 h-3"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                    ) : (
-                      <svg
-                        className="w-3 h-3"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                    )}
-                  </div>
-                  <span
-                    className={`text-sm ${
-                      req.met ? "text-green-600" : "text-gray-500"
-                    }`}
-                  >
-                    {req.text}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
+
+        
           {/* Submit Button */}
           <button
             type="submit"
@@ -285,7 +209,7 @@ const passwordRequirements = [
           <p className="text-gray-600 text-sm">
             Already have an account?{" "}
             <a
-              href="/signin"
+              href="/login"
               className="text-blue-600 hover:text-blue-700 font-medium transition-colors duration-200"
             >
               Sign in

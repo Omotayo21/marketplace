@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-
+import { FaEnvelope, FaLocationArrow, FaPhone, FaClock } from "react-icons/fa";
 
 import Footer from "../_components/Footer";
 import Header from "../_components/Header";
@@ -23,7 +23,7 @@ export default function ContactPage() {
   return (
     <>
       <Header />
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100  py-8 px-4">
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-gray-100  py-8 px-4">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="text-center mb-12">
@@ -31,8 +31,8 @@ export default function ContactPage() {
               Contact Us
             </h1>
             <p className="text-xl text-gray-600  max-w-3xl mx-auto">
-              Have questions? We&apos;d love to hear from you. Send us a message and
-              we&apos;ll respond as soon as possible.
+              Have questions? We&apos;d love to hear from you. Send us a message
+              and we&apos;ll respond as soon as possible.
             </p>
           </div>
 
@@ -47,25 +47,25 @@ export default function ContactPage() {
                 <div className="space-y-4">
                   {[
                     {
-                      icon: "📧",
+                      icon: <FaEnvelope className="text-2xl text-black" />,
                       label: "Email",
                       value: "hello@agora.com",
                       href: "mailto:hello@agora.com",
                     },
                     {
-                      icon: "📞",
+                      icon: <FaPhone className="text-2xl text-black" />,
                       label: "Phone",
                       value: "+234 9076930901",
                       href: "tel:+15551234567",
                     },
                     {
-                      icon: "📍",
+                      icon: <FaLocationArrow className="text-2xl text-black" />,
                       label: "Address",
                       value: "Lagos, Nigeria",
                       href: "#",
                     },
                     {
-                      icon: "🕒",
+                      icon: <FaClock className="text-2xl text-black" />,
                       label: "Hours",
                       value: "24hrs",
                       href: "#",

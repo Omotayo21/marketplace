@@ -45,19 +45,13 @@ const router = useRouter();
     <header className=" px-4 py-4 sticky z-40 shadow-lg w-full top-0 bg-[#3a1a9d]">
       <div className=" flex items-center justify-between">
         <div>
-          <Link
-            href="/favorites"
-            className="text-gray-700 hover:text-[#3a1e9d] transition-colors flex items-center"
-          >
-            <FaHeart className="mr-1" />
-            Favorites
-          </Link>
+          
           <Link href={"/home"}>
             <Image src={LogoLight} alt="agora logo light" className=" w-32 " />
           </Link>
         </div>
         <div className=" flex items-center gap-x-[12px]">
-          <ThemeToggle />
+        
 
           <Link href={"/dashboard"}>
                           <div className="w-12 h-12 rounded-full bg-gradient-to-r from-blue-100 to-indigo-100 flex items-center justify-center overflow-hidden">

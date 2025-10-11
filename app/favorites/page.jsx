@@ -74,7 +74,7 @@ export default function FavoritesPage() {
   return (
     <>
       <Header />
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-8 px-4">
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-gray-100 py-8 px-4">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="flex items-center justify-between mb-8">
@@ -135,7 +135,7 @@ export default function FavoritesPage() {
                       />
                       <div className="absolute top-3 left-3">
                         <span className="bg-black bg-opacity-70 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                          ${parseFloat(product.price).toFixed(2)}
+                          ₦{parseFloat(product.price).toFixed(2)}
                         </span>
                       </div>
                     </div>

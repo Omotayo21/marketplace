@@ -111,7 +111,7 @@ export default function AddProduct() {
   return (
     <>
       <Header />
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-8 px-4">
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-gray-100 py-8 px-4">
         <div className="max-w-2xl mx-auto">
           {/* Header */}
           <div className="text-center mb-8">
@@ -230,11 +230,11 @@ export default function AddProduct() {
                     htmlFor="price"
                     className="block  text-sm font-medium text-gray-700 mb-2"
                   >
-                    Price ($) *
+                    Price (₦) *
                   </label>
                   <div className="relative">
                     <span className="absolute left-4 top-1/2 transform -translate-y-1/2 dark:text-gray-200 text-gray-500">
-                      $
+                      ₦
                     </span>
                     <input
                       id="price"

@@ -15,56 +15,52 @@ export default function SignUp() {
  const [passwordStrength, setPasswordStrength] = useState(0);
  
 
-  const validateEmail = () => {
-    if (
-      !email.includes("@gmail.com") &&
-      !email.includes("@yahoo.com")
-    ) {
+const validateEmail = () => {
+  if (!email.endsWith("@gmail.com") && !email.endsWith("@yahoo.com")) {
     toast.error(
-          "Please enter a valid email address ending with @gmail.com or @yahoo.com",
+      "Please enter a valid email ending with @gmail.com or @yahoo.com"
     );
-      return false;
-    }
-    return true;
-  };
-
-  const validatePassword = () => {
-    if (password.length < 8) {
-      toast.error("Password must be at least 8 characters long");
     return false;
-      
-    }
-    return true
   }
-   
-   
- const handleSignUp = async (e) => {
-    e.preventDefault();
-    if (validateEmail() && validatePassword()) {
-         setLoading(true);
+  return true;
+};
 
-         const { data, error } = await signUp(email, password);
-    }
- 
-    if (error) {
-      toast.error(error.message);
-    } else {
-       toast.success("account created successfully Check your email to confirm your account!");
-   //   alert("Check your email to confirm your account!");
-    }
-    setLoading(false);
-  };
+const validatePassword = () => {
+  if (password.length < 8) {
+    toast.error("Password must be at least 8 characters long");
+    return false;
+  }
+  return true;
+};
+
+   
+   
+const handleSignUp = async (e) => {
+  e.preventDefault();
+
+  if (!validateEmail() || !validatePassword()) return;
+
+  setLoading(true);
+
+  const { data, error } = await signUp(email, password);
+
+  if (error) {
+    toast.error(error.message);
+  } else {
+    toast.success(
+      "Account created successfully! Check your email to confirm your account."
+    );
+  }
+
+  setLoading(false);
+};
+
 
   const handleGoogleSignUp = async () => {
     const { data, error } = await signInWithGoogle();
     if (error) alert(error.message);
   };
-const passwordRequirements = [
-  { text: "At least 8 characters", met: password.length >= 8 },
-  { text: "One uppercase letter", met: /[A-Z]/.test(password) },
-  { text: "One number", met: /[0-9]/.test(password) },
- 
-];
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-gray-100 flex items-center justify-center p-4">
       {/* Main Card */}
